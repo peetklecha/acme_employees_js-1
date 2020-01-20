@@ -103,7 +103,7 @@ const generateManagementTree = (employees) => {
 		return reports;
 	};
 
-	return { ...manager, reports: createTree(employees, manager.id) };
+	return { ...manager, reports: createTree(updEmployees, manager.id) };
 };
 
 console.log(JSON.stringify(generateManagementTree(employees), null, 2));
