@@ -20,6 +20,8 @@ const spacer = (text) => {
 spacer('findEmployeeByName Moe');
 // given a name and array of employees, return employee
 
+
+//[pk] great! really small thing: don't need parens around "employee"
 const findEmployeeByName = (name, employees) => {
   return employees.find((employee) => employee.name === name);
 };
@@ -30,6 +32,7 @@ spacer('');
 spacer('findManagerFor Shep');
 //given an employee and a list of employees, return the employee who is the manager
 
+//[pk] great!
 const findManagerFor = (employee, employees) => {
   return employees.find((manager) => manager.id === employee.managerId);
 };
@@ -41,6 +44,7 @@ spacer('findCoworkersFor Larry');
 
 //given an employee and a list of employees, return the employees who report to the same manager
 
+//[pk] perfect!
 const findCoworkersFor = (employee, employees) => {
   return employees.filter((coworker) => coworker.managerId === employee.managerId && coworker.id !== employee.id);
 };
@@ -57,6 +61,8 @@ spacer('');
 spacer('findManagementChain for moe');
 //given an employee and a list of employees, return a the management chain for that employee. The management chain starts from the employee with no manager with the passed in employees manager
 
+
+//[pk] nice!
 const findManagementChainForEmployee = (employee, employees) => {
   let currentEmployee = employee;
   const managementChain = [];
@@ -85,6 +91,7 @@ spacer('');
 spacer('generateManagementTree');
 //given a list of employees, generate a tree like structure for the employees, starting with the employee who has no manager. Each employee will have a reports property which is an array of the employees who report directly to them.
 
+//[pk] awesome!
 const generateManagementTree = (employees) => {
   const manager = employees.find((employee) => employee.managerId === undefined);
   let updEmployees = employees.filter((employee) => employee.id !== manager.id);
@@ -166,6 +173,7 @@ spacer('');
 spacer('displayManagementTree');
 //given a tree of employees, generate a display which displays the hierarchy
 
+//[pk] very good!
 const displayManagementTree = (managementTree) => {
   let level = 0;
   let result = '';
